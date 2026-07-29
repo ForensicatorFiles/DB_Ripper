@@ -1,0 +1,130 @@
+{
+  "_comment": "This key is ignored -- JSON has no native comments, so this is just a convention some teams use for notes. Copy this file to db_ripper_profiles.json (same folder as the script, or your working directory) or pass --config path/to/this.json",
+  "ios": {
+    "label": "iOS",
+    "databases": [
+      {
+        "name": "Cache.sqlite",
+        "note": "Safari / WebKit cache"
+      },
+      {
+        "name": "Cloud-V2.sqlite",
+        "note": "iCloud Photos metadata"
+      },
+      {
+        "name": "Photos.sqlite",
+        "note": "Photos library"
+      },
+      {
+        "name": "sms.db",
+        "note": "iMessage / SMS messages"
+      },
+      {
+        "name": "AddressBook.sqlitedb",
+        "note": "Contacts"
+      },
+      {
+        "name": "AddressBookImages.sqlitedb",
+        "note": "Contact photos"
+      },
+      {
+        "name": "CallHistory.storedata",
+        "note": "Call log"
+      },
+      {
+        "name": "interactionC.db",
+        "note": "Contacts / interaction graph"
+      },
+      {
+        "name": "healthdb_secure.sqlite",
+        "note": "Apple Health"
+      },
+      {
+        "name": "TCC.db",
+        "note": "Privacy & permissions (TCC)"
+      },
+      {
+        "name": "knowledgeC.db",
+        "note": "App usage / Screen Time"
+      },
+      {
+        "name": "Notes.sqlite",
+        "note": "Notes app"
+      },
+      {
+        "name": "consolidated.db",
+        "note": "Legacy location cache"
+      },
+      {
+        "name": "Calendar.sqlitedb",
+        "note": "Calendar events"
+      },
+      {
+        "name": "DCIM",
+        "note": "Camera roll photos & videos",
+        "type": "folder",
+        "parent": "Media"
+      },
+      {
+        "name": "MyCase.sqlite",
+        "note": "Custom database specific to this case"
+      }
+    ]
+  },
+  "common": {
+    "label": "Third-Party (cross-platform)",
+    "databases": [
+      {
+        "name": "ChatStorage.sqlite",
+        "note": "WhatsApp messages (iOS)"
+      },
+      {
+        "name": "ContactsV2.sqlite",
+        "note": "WhatsApp contacts (iOS)"
+      },
+      {
+        "name": "msgstore.db",
+        "note": "WhatsApp messages (Android)"
+      },
+      {
+        "name": "wa.db",
+        "note": "WhatsApp contacts (Android)"
+      },
+      {
+        "name": "signal.db",
+        "note": "Signal messages (Android)"
+      },
+      {
+        "name": "telegram.db",
+        "note": "Telegram cache"
+      },
+      {
+        "name": "kik.sqlite",
+        "note": "Kik messages"
+      },
+      {
+        "name": "directMessages.db",
+        "note": "Instagram / Snap direct messages"
+      },
+      {
+        "name": "signal_extra.db",
+        "note": "Example addition to the shared third-party profile"
+      }
+    ]
+  },
+  "custom_case_2026": {
+    "label": "Case #2026-114 Special Targets",
+    "databases": [
+      {
+        "name": "weirdapp.db",
+        "note": "One-off app relevant only to this case"
+      },
+      {
+        "name": "Evidence",
+        "note": "Custom evidence folder, only matched under AppData",
+        "type": "folder",
+        "parent": "AppData"
+      }
+    ]
+  }
+}
