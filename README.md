@@ -159,6 +159,4 @@ Copyright (c) 2026 Forensicator Files
 
 ⚠️ Disclaimer: This tool is provided as-is, for educational and lawful forensic use, with no warranty of accuracy or fitness for purpose. Always independently verify results against source data before relying on them for investigative or legal purposes. Not legal advice. Use at your own risk.
 
-## Contributing
-
-Issues and pull requests welcome — in particular, additional database profile entries for apps not yet covered are always useful.
+[![BuyMeACoffee](https://raw.githubusercontent.com/pachadotdev/buymeacoffee-badges/main/bmc-black.svg)](https://www.buymeacoffee.com/forensicatorfiles)
