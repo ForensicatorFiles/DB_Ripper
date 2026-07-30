@@ -5,14 +5,14 @@ DB Ripper (CLI)
 Plain command-line version -- no web server, no curses, just
 plain text prompts you answer by typing numbers/letters and
 pressing Enter.
-
+ 
 Run:            python3 db_ripper_cli.py
 Check version:  python3 db_ripper_cli.py --version
 Custom targets: python3 db_ripper_cli.py --config path/to/profiles.json
                 (or drop a file named db_ripper_profiles.json next to this
                 script / in the current directory -- it's picked up
                 automatically. See db_ripper_profiles.example.json.)
-
+ 
 Steps:
   1. Type the path to an extraction folder or a .zip file.
   2. Pick iOS or Android.
@@ -20,7 +20,7 @@ Steps:
   4. Confirm and it copies everything (plus WAL/SHM sidecars) into an
      Exported/ subfolder.
 """
-
+ 
 import argparse
 import copy
 import json
@@ -29,10 +29,18 @@ import shutil
 import sys
 import zipfile
 from pathlib import Path, PurePosixPath
-
+ 
 APP_NAME = "DB Ripper"
 __version__ = "1.1.0"
-
+ 
+ASCII_BANNER = r"""
+    ____  ____     ____  ________  ____  __________
+   / __ \/ __ )   / __ \/  _/ __ \/ __ \/ ____/ __ \
+  / / / / __  |  / /_/ // // /_/ / /_/ / __/ / /_/ /
+ / /_/ / /_/ /  / _, _// // ____/ ____/ /___/ _, _/
+/_____/_____/  /_/ |_/___/_/   /_/   /_____/_/ |_|
+"""
+ 
 CONFIG_FILENAME = "db_ripper_profiles.json"
 
 # ---------------------------------------------------------------------------
@@ -543,7 +551,9 @@ def main():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog="db_ripper_cli.py",
-        description=f"{APP_NAME} -- command-line tool for locating mobile-extraction artifacts.")
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description=f"{ASCII_BANNER}\n{APP_NAME} v{__version__} -- command-line tool "
+                    f"for locating mobile-extraction artifacts.")
     parser.add_argument("--version", "-v", action="store_true",
                         help="print the version number and exit")
     parser.add_argument("--config", "-c", metavar="PATH",
@@ -551,13 +561,13 @@ if __name__ == "__main__":
                              "(default: look for db_ripper_profiles.json next "
                              "to this script or in the current directory)")
     args = parser.parse_args()
-
+ 
     if args.version:
         print(f"{APP_NAME} {__version__}")
         sys.exit(0)
-
+ 
     DATABASE_PROFILES, config_message = load_database_profiles(args.config)
     if config_message:
         print(config_message)
-
+ 
     main()
