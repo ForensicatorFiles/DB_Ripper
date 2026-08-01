@@ -1,5 +1,17 @@
 # DB Ripper
 
+```
+=====================================================
+    ____  ____     ____  ________  ____  __________
+   / __ \/ __ )   / __ \/  _/ __ \/ __ \/ ____/ __ \
+  / / / / __  |  / /_/ // // /_/ / /_/ / __/ / /_/ /
+ / /_/ / /_/ /  / _, _// // ____/ ____/ /___/ _, _/
+/_____/_____/  /_/ |_/___/_/   /_/   /_____/_/ |_|
+-----------------------------------------------------
+ Database Extraction Toolkit  --  v1.0.0
+=====================================================
+```
+
 A dependency-free terminal tool for locating and extracting SQLite databases — including their WAL/SHM sidecars — out of iOS and Android mobile forensic extractions.
 
 Point it at a folder or a `.zip` of an extraction, pick iOS or Android, choose which databases you want, and it recursively finds and copies matches (plus any active `-wal`/`-shm` files sitting next to them) into an `Exported/` folder.
