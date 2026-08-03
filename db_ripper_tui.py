@@ -8,14 +8,14 @@ Terminal UI for forensic examiners to:
   3. Select which databases / folders to pull
   4. Recursively locate and copy them (plus WAL/SHM sidecars) into an
      Exported/ subfolder, with a live progress view while it runs
- 
+
 Run:            python3 db_ripper_tui.py
 Check version:  python3 db_ripper_tui.py --version
 Custom targets: python3 db_ripper_tui.py --config path/to/profiles.json
                 (or drop a file named db_ripper_profiles.json next to this
                 script / in the current directory -- it's picked up
                 automatically. See db_ripper_profiles.example.json.)
- 
+
 Controls (shown in the footer of every screen):
   Up/Down or j/k   move cursor
   Enter            open folder / confirm selection
@@ -26,7 +26,7 @@ Controls (shown in the footer of every screen):
   d                jump to a drive / mount point (browser)
   q / Esc          back / quit
 """
- 
+
 import argparse
 import copy
 import curses
@@ -39,10 +39,10 @@ import time
 import zipfile
 from pathlib import Path, PurePosixPath
 import shutil
- 
+
 APP_NAME = "DB Ripper"
 __version__ = "1.1.0"
- 
+
 ASCII_BANNER = r"""
     ____  ____     ____  ________  ____  __________
    / __ \/ __ )   / __ \/  _/ __ \/ __ \/ ____/ __ \
@@ -50,7 +50,7 @@ ASCII_BANNER = r"""
  / /_/ / /_/ /  / _, _// // ____/ ____/ /___/ _, _/
 /_____/_____/  /_/ |_/___/_/   /_/   /_____/_/ |_|
 """
- 
+
 CONFIG_FILENAME = "db_ripper_profiles.json"
 
 # ---------------------------------------------------------------------------
@@ -766,7 +766,7 @@ def browse_for_extraction(stdscr):
     Returns (kind, Path) for the chosen extraction, or None if the user quit.
     kind is "folder" or "zip".
     """
-    current_dir = Path.home()
+    current_dir = Path.cwd()
 
     while True:
         entries = list_directory(current_dir)
@@ -1194,11 +1194,11 @@ if __name__ == "__main__":
                              "(default: look for db_ripper_profiles.json next "
                              "to this script or in the current directory)")
     args = parser.parse_args()
- 
+
     if args.version:
         print(f"{APP_NAME} {__version__}")
         sys.exit(0)
- 
+
     DATABASE_PROFILES, config_message = load_database_profiles(args.config)
     if config_message:
         print(config_message)
@@ -1206,5 +1206,5 @@ if __name__ == "__main__":
             input("Press Enter to continue with built-in defaults (Ctrl+C to quit)... ")
         else:
             time.sleep(1.2)
- 
+
     curses.wrapper(main)
