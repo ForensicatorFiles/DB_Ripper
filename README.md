@@ -39,6 +39,11 @@ This is a **triage and collection convenience tool**, not a forensic acquisition
 
 - Python 3.9+
 - Nothing else. Both scripts use only the standard library — no `pip install`, no virtualenv, no `requirements.txt`.
+- * There are some versions of Python that do not have curses natively. On Windows, run 
+
+```
+pip install windows-curses
+```
 
 The TUI requires a real terminal (curses needs a TTY) — it won't run inside most IDE consoles or non-interactive shells. The CLI runs anywhere Python does, including over SSH or piped input.
 
