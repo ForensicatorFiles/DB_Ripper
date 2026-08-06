@@ -159,7 +159,7 @@ Not yet implemented — see [`CHANGELOG.md`](./CHANGELOG.md) for the current lis
 - Optional hash-on-copy (MD5/SHA-256) with a manifest file
 - Batch mode for running the same profile against multiple extractions unattended
 
-- I plan to release a blog post related to the tool. I'll update this with a direct link but until then feel free to check out the blog [here](https://forensicatorfiles.wixsite.com/home){:target="_blank"}!
+- I plan to release a blog post related to the tool. I'll update this with a direct link but until then feel free to check out the blog [here](https://forensicatorfiles.wixsite.com/home)!
 
 ---
 
